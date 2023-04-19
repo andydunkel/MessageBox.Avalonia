@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModels="clr-namespace:MessageBox.Avalonia.ViewModels"
         xmlns:avalonia="clr-namespace:Markdown.Avalonia;assembly=Markdown.Avalonia"
+        xmlns:res="clr-namespace:MessageBox.Avalonia.Resources"
         mc:Ignorable="d" d:DesignWidth="150" d:DesignHeight="100"
         x:Class="MessageBox.Avalonia.Views.MsBoxStandardWindow"
         SizeToContent="{Binding SizeToContent}"
@@ -107,21 +108,22 @@
         <!--Buttons-->
         <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                     HorizontalAlignment="Right">
-            <Button Classes="button ok" Name="OkButton" Content="OK" Tag="Colored"
+            <Button Classes="button ok" Name="OkButton" Content="{x:Static res:Resources.OK}" Tag="Colored"
                     Command="{Binding ButtonClickCommand}"
-                    CommandParameter="{Binding $self.Content}"
+                    CommandParameter="Ok"
                     IsVisible="{Binding IsOkShowed}" />
-            <Button Classes="button yes" Name="YesButton" Content="Yes" Command="{Binding ButtonClickCommand}"
-                    CommandParameter="{Binding $self.Content}"
+            <Button Classes="button yes" Name="YesButton" Content="{x:Static res:Resources.Yes}" 
+                    Command="{Binding ButtonClickCommand}"
+                    CommandParameter="Yes"
                     IsVisible="{Binding IsYesShowed}" />
-            <Button Classes="button no" Content="No" Command="{Binding ButtonClickCommand}"
-                    CommandParameter="{Binding $self.Content}"
+            <Button Classes="button no" Content="{x:Static res:Resources.No}" Command="{Binding ButtonClickCommand}"
+                    CommandParameter="No"
                     IsVisible="{Binding IsNoShowed}" />
-            <Button Classes="button abort" Content="Abort" Command="{Binding ButtonClickCommand}"
-                    CommandParameter="{Binding $self.Content}"
+            <Button Classes="button abort" Content="{x:Static res:Resources.Abort}" Command="{Binding ButtonClickCommand}"
+                    CommandParameter="Abort"
                     IsVisible="{Binding IsAbortShowed}" />
-            <Button Classes="button cancel" Content="Cancel" Command="{Binding ButtonClickCommand}"
-                    CommandParameter="{Binding $self.Content}"
+            <Button Classes="button cancel" Content="{x:Static res:Resources.Cancel}" Command="{Binding ButtonClickCommand}"
+                    CommandParameter="Cancel"
                     IsVisible="{Binding IsCancelShowed}" />
         </StackPanel>
     </Grid>

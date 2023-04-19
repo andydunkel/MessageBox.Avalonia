@@ -4,6 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="150" d:DesignHeight="100"
         x:Class="MessageBox.Avalonia.Views.MsBoxHyperlinkWindow"
+        xmlns:res="clr-namespace:MessageBox.Avalonia.Resources"
         SizeToContent="WidthAndHeight"
         MinWidth="{Binding MinWidth}"
         MaxWidth="{Binding MaxWidth}"
@@ -91,15 +92,19 @@
         <!--Buttons-->
         <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"
                     HorizontalAlignment="Right">
-            <Button Content="Ok" Tag="Colored" Command="{Binding ButtonClickCommand}"
-                    CommandParameter="{Binding $self.Content}" IsVisible="{Binding IsOkShowed}" />
-            <Button Content="Yes" Command="{Binding ButtonClickCommand}" CommandParameter="{Binding $self.Content}"
+            <Button Content="{x:Static res:Resources.OK}" Tag="Colored" Command="{Binding ButtonClickCommand}"
+                    CommandParameter="Ok" IsVisible="{Binding IsOkShowed}" />
+            <Button Content="{x:Static res:Resources.Yes}" Command="{Binding ButtonClickCommand}" 
+                    CommandParameter="Yes"
                     IsVisible="{Binding IsYesShowed}" />
-            <Button Content="No" Command="{Binding ButtonClickCommand}" CommandParameter="{Binding $self.Content}"
+            <Button Content="{x:Static res:Resources.No}" Command="{Binding ButtonClickCommand}" 
+                    CommandParameter="No"
                     IsVisible="{Binding IsNoShowed}" />
-            <Button Content="Abort" Command="{Binding ButtonClickCommand}" CommandParameter="{Binding $self.Content}"
+            <Button Content="{x:Static res:Resources.Abort}" Command="{Binding ButtonClickCommand}" 
+                    CommandParameter="Abort"
                     IsVisible="{Binding IsAbortShowed}" />
-            <Button Content="Cancel" Command="{Binding ButtonClickCommand}" CommandParameter="{Binding $self.Content}"
+            <Button Content="{x:Static res:Resources.Cancel}" Command="{Binding ButtonClickCommand}" 
+                    CommandParameter="Cancel"
                     IsVisible="{Binding IsCancelShowed}" />
         </StackPanel>
     </Grid>
